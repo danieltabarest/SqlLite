@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B3E7E4D-6F5D-4968-ADED-2B83E52FBC2F}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NsuGo.DatabaseAccess</RootNamespace>
+    <AssemblyName>NsuGo.DatabaseAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataMappers\AccountHoldMapper.cs" />
+    <Compile Include="DataMappers\AccountSummaryMapper.cs" />
+    <Compile Include="DataMappers\AnnouncementMapper.cs" />
+    <Compile Include="DataMappers\AssignmentMapper.cs" />
+    <Compile Include="DataMappers\ContentMapper.cs" />
+    <Compile Include="DataMappers\CourseMapper.cs" />
+    <Compile Include="DataMappers\FileMapper.cs" />
+    <Compile Include="DataMappers\FolderMapper.cs" />
+    <Compile Include="DataMappers\GradeMapper.cs" />
+    <Compile Include="DataMappers\StaffMapper.cs" />
+    <Compile Include="DataMappers\TermMapper.cs" />
+    <Compile Include="DataMappers\UserAccountMapper.cs" />
+    <Compile Include="DataMappers\Base\BaseDataMapper.cs" />
+    <Compile Include="Repositories\Base\LocalStorageRepository.cs" />
+    <Compile Include="Repositories\AccountHoldRepository.cs" />
+    <Compile Include="Repositories\AccountSummaryRepository.cs" />
+    <Compile Include="Repositories\AnnouncementRepository.cs" />
+    <Compile Include="Repositories\AssignmentRepository.cs" />
+    <Compile Include="Repositories\ContentRepository.cs" />
+    <Compile Include="Repositories\CourseRepository.cs" />
+    <Compile Include="Repositories\FileRepository.cs" />
+    <Compile Include="Repositories\FolderRepository.cs" />
+    <Compile Include="Repositories\GradeRepository.cs" />
+    <Compile Include="Repositories\StaffCourseRosterRepository.cs" />
+    <Compile Include="Repositories\StaffRepository.cs" />
+    <Compile Include="Repositories\TermRepository.cs" />
+    <Compile Include="Repositories\UserAccountRepository.cs" />
+    <Compile Include="Configuration\Dependency.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyLearn.Common\MyLearn.Common.csproj">
+      <Project>{0C8F641A-99EF-4DFE-80ED-FF3761FA11E1}</Project>
+      <Name>MyLearn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyLearn.Data\MyLearn.LocalData.csproj">
+      <Project>{1D7B706D-912F-4608-AB10-02481C2F17BC}</Project>
+      <Name>MyLearn.LocalData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NsuGo.Definitions\NsuGo.Definition.csproj">
+      <Project>{E065FBEC-3BBD-4818-BD65-AE2F2EECC1A6}</Project>
+      <Name>NsuGo.Definition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NsuGo.Framework\NsuGo.Framework.csproj">
+      <Project>{EBA8D8A5-B0DC-40B9-8993-7814FED798C7}</Project>
+      <Name>NsuGo.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="DataMappers\" />
+    <Folder Include="DataMappers\Base\" />
+    <Folder Include="Repositories\Base\" />
+    <Folder Include="Configuration\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>
